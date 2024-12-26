@@ -30,7 +30,7 @@ body {
 
 .illustration img {
   width: 100%;
-  max-width: 319px;
+  max-width: 480px;
   height: auto;
   display: flex;
   justify-content: center;
