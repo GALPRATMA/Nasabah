@@ -5,60 +5,39 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", serif;
-  text-decoration: none;
 }
 
 body {
+  min-height: 667px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background-color: #f5f5f5;
-  /* padding: 20px; */
-}
-
-/* Desktop Styles */
-.container {
-  display: flex;
-  gap: 40px;
-  width: 100%;
-  max-width: 1440px;
-  justify-content: center;
-  padding: 40px;
-}
-
-.screen {
-  width: 480px;
-  min-height: 720px;
   background: white;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
 }
 
-.screen:hover {
-  transform: translateY(-10px);
+.container {
+  width: 100%;
+  height: 100vh;
+  max-width: 480px;
+  padding: 3rem;
+  background: white;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
 }
 
-.welcome-text {
-  text-align: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
-}
-
-.welcome-text h4 {
+h1 {
   color: #00bcd4;
-  font-size: 30px;
+  text-align: center;
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+  font-size: 25px;
+  font-weight: bold;
   text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
 .illustration img {
   width: 100%;
-  height: 400px;
-  margin-bottom: 60px;
+  max-width: 480px;
+  height: auto;
+  margin-bottom: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -74,19 +53,17 @@ body {
   background-color: #00bcd4;
   color: white;
   border: 2px solid transparent;
-  padding: 15px 0;
-  border-radius: 30px;
-  width: 85%;
+  padding: 10px 0;
+  border-radius: 25px;
+  width: 100%;
   font-size: 20px;
   font-weight: 600;
   font-style: italic;
   cursor: pointer;
   transition: all 0.3s ease;
   letter-spacing: 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 60px;
+  margin-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 .login-btn a {
@@ -107,65 +84,16 @@ body {
   box-shadow: 0 4px 8px rgba(0, 188, 212, 0.2);
 }
 
-/* Tablet Styles */
-@media screen and (max-width: 1024px) {
+@media (max-width: 480px) {
   .container {
-    gap: 30px;
-    padding: 30px;
+    padding: 1.5rem;
   }
 
-  .screen {
-    width: 400px;
-    min-height: 680px;
-    padding: 10px;
-  }
-
-  .welcome-text h4 {
-    font-size: 24px;
-  }
-
-  .illustration img {
-    height: 300px;
-  }
-
-  .login-btn {
-    width: 65%;
-  }
-}
-
-/* Mobile Styles */
-@media screen and (max-width: 768px) {
-  .container {
-    /* flex-direction: column; */
-    gap: 20px;
-    padding: 15px;
-  }
-
-  .screen {
-    width: 100%;
-    max-width: 375px;
-    min-height: auto;
-    padding: 40px;
-    /* margin-bottom: 20px; */
-  }
-
-  .welcome-text {
-    margin: 60px 0;
-  }
-
-  .welcome-text h4 {
+  h1 {
     font-size: 20px;
   }
 
   .illustration img {
-    height: 250px;
-    /* margin-bottom: 30px; */
-  }
-
-  .login-btn {
     width: 100%;
-    max-width: 238px;
-    height: 46px;
-    font-size: 20px;
   }
 }
