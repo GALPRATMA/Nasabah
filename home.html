@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Bank | Smk Ijo</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="illustration">
+        <img src="img/4.png" alt="logo" />
+        <p>Buat Hidupmu Lebih Terencana Dengan Menabung</p>
+      </div>
+      <div class="profile-card">
+        <div class="profile-header">
+          <img src="img/5.png" alt="card" class="card" />
+          <div class="profile-info">
+            <h2>Hi, Jokowidodo</h2>
+            <a href="#" class="edit-link">Edit Data Anda Disini</a>
+          </div>
+        </div>
+        <div class="balance-card">
+          <div class="balance-label">Saldo Akhir</div>
+          <div class="balance-amount">Rp 3.000.000,00</div>
+        </div>
+      </div>
+      <img src="img/Vector.png" alt="gelombang" class="gelombang" />
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+    <!-- end Overlay -->
+
+    <!-- From edit profile  -->
+    <form class="profile-form">
+      <div class="profile-image-container">
+        <img src="img/jokowi.png" alt="Profile" class="profile-image" />
+        <div class="camera-icon">
+          <img src="img/icon.png" alt="Camera" />
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="nama">Nama</label>
+        <input type="text" id="nama" name="nama" />
+      </div>
+
+      <div class="form-group">
+        <label for="no-rekening">No.Rekening</label>
+        <input type="text" id="no-rekening" name="no-rekening" />
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" />
+      </div>
+
+      <button type="submit" class="submit-btn">Ubah</button>
+    </form>
+    <!-- akhir edit profil 1 -->
+
+    <script src="script.js"></script>
+  </body>
+</html>
