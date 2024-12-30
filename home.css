@@ -1,310 +1,324 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); /* Mengimpor font Poppins dengan semua variasi berat dan gaya */
 
-/* css untuk halaman utama */
+/* Definisi keyframe untuk animasi fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Mulai dengan elemen tidak terlihat */
+  }
+  to {
+    opacity: 1; /* Berakhir dengan elemen sepenuhnya terlihat */
+  }
+}
+
+/* Definisi keyframe untuk animasi slide up */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px); /* Mulai dari 50px di bawah posisi normal */
+    opacity: 0; /* Mulai dengan tidak terlihat */
+  }
+  to {
+    transform: translateY(0); /* Bergerak ke posisi normal (0px) */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
+}
+
+/* Reset default styles untuk semua elemen */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", serif;
+  margin: 0; /* Hapus margin default */
+  padding: 0; /* Hapus padding default */
+  box-sizing: border-box; /* Ukuran elemen termasuk padding dan border */
+  font-family: "Poppins", serif; /* Set font default ke Poppins */
 }
 
+/* Styling untuk elemen body */
 body {
-  min-height: 667px;
-  display: flex;
-  justify-content: center;
-  background: white;
+  min-height: 667px; /* Set tinggi minimum body */
+  display: flex; /* Gunakan flexbox untuk layout */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  background: white; /* Set background putih */
+  animation: fadeIn 1s ease-out; /* Animasi fade in selama 1 detik */
 }
 
+/* Container utama */
 .container {
-  width: 100%;
-  height: 100vh;
-  max-width: 480px;
-  background: white;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  width: 100%; /* Lebar penuh */
+  height: 100vh; /* Tinggi penuh viewport */
+  max-width: 480px; /* Batasan lebar maksimum */
+  background: white; /* Latar belakang putih */
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1); /* Efek bayangan halus */
+  position: relative; /* Mengaktifkan konteks posisi */
+  display: flex; /* Mengaktifkan flexbox */
+  flex-direction: column; /* Susun elemen secara vertikal */
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 0.3s; /* Tunda animasi 0.3 detik */
 }
 
 .illustration {
-  width: 100%;
-  min-height: 230px;
-  background-color: #038ce4;
-  border-radius: 0 0 20px 20px;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-  padding: 0 10px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  width: 100%; /* Lebar penuh */
+  min-height: 230px; /* Tinggi minimum */
+  background-color: #038ce4; /* Latar belakang biru */
+  border-radius: 0 0 20px 20px; /* Sudut melengkung di bagian bawah */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  padding: 0 10px; /* Padding horizontal */
+  display: flex; /* Mengaktifkan flexbox */
+  align-items: center; /* Posisi elemen di tengah vertikal */
+  flex-direction: column; /* Susun elemen secara vertikal */
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 0.6s; /* Tunda animasi 0.6 detik */
 }
 
 .illustration img {
-  width: 190px;
-  height: auto;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  width: 190px; /* Lebar tetap */
+  height: auto; /* Tinggi menyesuaikan aspek ratio */
+  margin-top: 1rem; /* Jarak atas */
+  margin-bottom: 1rem; /* Jarak bawah */
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 0.9s; /* Tunda animasi 0.9 detik */
 }
 
 .illustration p {
-  color: white;
-  font-size: 18px;
-  font-weight: 400;
-  text-align: center;
+  color: white; /* Warna teks putih */
+  font-size: 18px; /* Ukuran teks */
+  font-weight: 400; /* Ketebalan font normal */
+  text-align: center; /* Rata tengah teks */
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 1s; /* Tunda animasi 1 detik */
 }
 
 .profile-card {
-  background-color: white;
-  border-radius: 15px;
-  padding: 20px;
-  position: relative;
-  margin: -50px 20px 0 20px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 2;
+  background-color: white; /* Latar belakang putih */
+  border-radius: 15px; /* Sudut melengkung */
+  padding: 20px; /* Jarak dalam */
+  position: relative; /* Mengaktifkan posisi relatif */
+  margin: -50px 20px 0 20px; /* Margin negatif untuk tumpang tindih */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan kartu */
+  z-index: 2; /* Lapisan di atas background */
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 1.2s; /* Tunda animasi 1.2 detik */
 }
 
 .profile-header {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  margin-bottom: 15px;
+  display: flex; /* Mengaktifkan flexbox */
+  align-items: center; /* Posisi elemen di tengah vertikal */
+  gap: 20px; /* Jarak antar elemen */
+  margin-bottom: 15px; /* Jarak bawah */
 }
 
 .card {
-  width: 72px;
-  height: 70px;
+  width: 72px; /* Lebar tetap */
+  height: 70px; /* Tinggi tetap */
 }
 
 .profile-info h2 {
-  font-size: 1.2rem;
-  margin-bottom: 5px;
+  font-size: 1.2rem; /* Ukuran teks header */
+  margin-bottom: 5px; /* Jarak bawah */
 }
 
 .edit-link {
-  color: #00a0e3;
-  text-decoration: none;
-  font-size: 0.9rem;
+  color: #00a0e3; /* Warna link biru */
+  text-decoration: none; /* Hapus garis bawah */
+  font-size: 0.9rem; /* Ukuran teks link */
 }
 
 .balance-card {
-  background-color: #ffe4e4;
-  border-radius: 10px;
-  padding: 5px 10px;
-  margin-top: 15px;
-  border: 1px solid black;
+  background-color: #ffe4e4; /* Latar belakang merah muda */
+  border-radius: 10px; /* Sudut melengkung */
+  padding: 5px 10px; /* Jarak dalam */
+  margin-top: 15px; /* Jarak atas */
+  border: 1px solid black; /* Garis tepi hitam */
 }
 
 .balance-label {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.9rem; /* Ukuran teks label */
+  color: #666; /* Warna teks abu-abu */
 }
 
 .balance-amount {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: #333;
+  font-size: 1.4rem; /* Ukuran teks jumlah */
+  font-weight: bold; /* Teks tebal */
+  color: #333; /* Warna teks abu-abu gelap */
 }
 
 .gelombang {
-  width: 100%;
-}
-
-.gelombang {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: auto;
-  z-index: 1;
+  position: absolute; /* Posisi absolut */
+  bottom: 0; /* Posisi di bawah */
+  left: 0; /* Posisi di kiri */
+  width: 100%; /* Lebar penuh */
+  height: auto; /* Tinggi otomatis */
+  z-index: 1; /* Lapisan di atas background */
 }
 
 .show {
-  display: block !important; /* !important digunakan untuk memastikan perubahan display benar */
+  display: block !important; /* Paksa tampilkan elemen */
 }
 
-/* css untuk form dan overlay */
 .overlay {
-  display: none; /* Sembunyikan overlay secara default */
-  position: fixed; /* Posisi tetap saat di-scroll */
-  top: 0;
+  display: none; /* Sembunyikan secara default */
+  position: fixed; /* Posisi tetap */
+  top: 0; /* Posisi full screen */
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Warna hitam dengan transparansi 50% */
-  z-index: 999; /* Layer di atas konten utama tapi di bawah form */
+  background: rgba(0, 0, 0, 0.5); /* Latar belakang hitam transparan */
+  z-index: 999; /* Lapisan di atas konten */
 }
 
 .profile-form {
-  display: none; /*agar tidak terlihat pada default */
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  max-width: 344px;
-  padding: 20px;
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
+  display: none; /* Sembunyikan secara default */
+  position: fixed; /* Posisi tetap */
+  top: 50%; /* Posisi tengah vertikal */
+  left: 50%; /* Posisi tengah horizontal */
+  transform: translate(-50%, -50%); /* Penyesuaian posisi tengah sempurna */
+  width: 100%; /* Lebar penuh */
+  max-width: 344px; /* Lebar maksimum */
+  padding: 20px; /* Jarak dalam */
+  background: white; /* Latar belakang putih */
+  border-radius: 10px; /* Sudut melengkung */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+  z-index: 1000; /* Lapisan di atas overlay */
+  animation: fadeIn 1s ease-out; /* Animasi fade in selama 1 detik */
 }
 
 .profile-image-container {
-  position: relative;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto 20px;
+  position: relative; /* Mengaktifkan posisi relatif */
+  width: 150px; /* Lebar tetap */
+  height: 150px; /* Tinggi tetap */
+  margin: 0 auto 20px; /* Posisi tengah horizontal */
 }
 
 .profile-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
+  width: 100%; /* Lebar penuh container */
+  height: 100%; /* Tinggi penuh container */
+  border-radius: 50%; /* Bentuk lingkaran */
+  object-fit: cover; /* Penyesuaian gambar */
 }
 
 .camera-icon {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  width: 35px;
-  height: 35px;
-  background: #12c727;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
+  position: absolute; /* Posisi absolut */
+  right: 10px; /* Jarak dari kanan */
+  bottom: 10px; /* Jarak dari bawah */
+  width: 35px; /* Lebar tetap */
+  height: 35px; /* Tinggi tetap */
+  background: #12c727; /* Latar belakang hijau */
+  border-radius: 50%; /* Bentuk lingkaran */
+  display: flex; /* Mengaktifkan flexbox */
+  justify-content: center; /* Posisi tengah horizontal */
+  align-items: center; /* Posisi tengah vertikal */
+  cursor: pointer; /* Kursor pointer */
 }
 
 .camera-icon img {
-  width: 20px;
-  height: 20px;
+  width: 20px; /* Lebar tetap */
+  height: 20px; /* Tinggi tetap */
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 15px; /* Jarak bawah */
 }
 
 .form-group label {
-  display: block;
-  margin-bottom: 5px;
-  color: #333;
-  font-size: 14px;
+  display: block; /* Tampilan block */
+  margin-bottom: 5px; /* Jarak bawah */
+  color: #333; /* Warna teks abu-abu gelap */
+  font-size: 14px; /* Ukuran teks label */
 }
 
 .form-group input {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  font-size: 16px;
-  background-color: #f5f5f5;
+  width: 100%; /* Lebar penuh */
+  padding: 10px; /* Jarak dalam */
+  border: 1px solid #ddd; /* Garis tepi abu-abu muda */
+  border-radius: 5px; /* Sudut melengkung */
+  font-size: 16px; /* Ukuran teks input */
+  background-color: #f5f5f5; /* Latar belakang abu-abu muda */
 }
 
 .submit-btn {
-  display: block;
-  width: 100px;
-  margin: 20px auto 0;
-  padding: 10px;
-  background-color: #808080;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
+  display: block; /* Tampilan block */
+  width: 100px; /* Lebar tetap */
+  margin: 20px auto 0; /* Posisi tengah horizontal */
+  padding: 10px; /* Jarak dalam */
+  background-color: #808080; /* Latar belakang abu-abu */
+  color: white; /* Warna teks putih */
+  border: none; /* Tanpa garis tepi */
+  border-radius: 5px; /* Sudut melengkung */
+  cursor: pointer; /* Kursor pointer */
+  font-size: 16px; /* Ukuran teks tombol */
+  transition: background-color 1.2s ease; /* Transisi halus */
 }
 
 .submit-btn:hover {
-  background-color: #666;
+  background-color: #666; /* Warna latar saat hover */
 }
 
+/* Perangkat ekstra kecil (ponsel, 320px ke bawah) */
 @media screen and (max-width: 320px) {
   .container {
-    max-width: 100%;
-    height: 100vh;
+    max-width: 100%; /* Lebar penuh container */
+    height: 100vh; /* Tinggi penuh viewport */
   }
 
   .illustration {
-    min-height: 180px;
+    min-height: 180px; /* Tinggi minimum lebih kecil */
   }
 
   .illustration img {
-    width: 140px;
+    width: 140px; /* Gambar lebih kecil */
   }
 
   .illustration p {
-    font-size: 13px;
+    font-size: 13px; /* Teks lebih kecil */
   }
 
   .profile-card {
-    margin: -40px 10px 0 10px;
-    padding: 15px;
+    margin: -40px 10px 0 10px; /* Penyesuaian margin */
+    padding: 15px; /* Padding lebih kecil */
   }
 
   .card {
-    width: 50px;
+    width: 50px; /* Kartu lebih kecil */
     height: 50px;
   }
 
   .profile-info h2 {
-    font-size: 1rem;
+    font-size: 1rem; /* Header lebih kecil */
   }
 
   .edit-link {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Link lebih kecil */
   }
 
   .balance-amount {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Jumlah lebih kecil */
   }
 }
 
-/* For small devices (320px to 480px) */
+/* Perangkat kecil (ponsel, 321px sampai 480px) */
 @media screen and (min-width: 321px) and (max-width: 480px) {
   .container {
-    max-width: 100%;
+    max-width: 100%; /* Lebar penuh */
   }
 
   .illustration img {
-    width: 160px;
+    width: 160px; /* Ukuran gambar disesuaikan */
   }
 
   .illustration p {
-    font-size: 16px;
+    font-size: 16px; /* Ukuran teks disesuaikan */
   }
 }
 
-/* For medium devices (481px to 768px) */
+/* Perangkat menengah (tablet, 481px sampai 768px) */
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .container {
-    max-width: 480px;
+    max-width: 480px; /* Lebar container tetap */
   }
 
   .profile-card {
-    margin: -50px 30px 0 30px;
+    margin: -50px 30px 0 30px; /* Penyesuaian margin */
   }
 }
-
-/* For landscape orientation */
-/* @media screen and (orientation: landscape) and (max-height: 500px) {
-  .container {
-    height: auto;
-    min-height: 100vh;
-  }
-
-  .illustration {
-    min-height: 180px;
-  }
-
-  .illustration img {
-    width: 140px;
-    margin: 0.5rem 0;
-  }
-
-  .profile-card {
-    margin-bottom: 20px;
-  }
-
-  .gelombang {
-    position: fixed;
-  } */

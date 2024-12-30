@@ -1,5 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
+/* Definisi keyframe untuk animasi fade in */
+@keyframes fadeIn {
+  from {
+    opacity: 0; /* Mulai dengan elemen tidak terlihat */
+  }
+  to {
+    opacity: 1; /* Berakhir dengan elemen sepenuhnya terlihat */
+  }
+}
+
+/* Definisi keyframe untuk animasi slide up */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px); /* Mulai dari 50px di bawah posisi normal */
+    opacity: 0; /* Mulai dengan tidak terlihat */
+  }
+  to {
+    transform: translateY(0); /* Bergerak ke posisi normal (0px) */
+    opacity: 1; /* Menjadi sepenuhnya terlihat */
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,6 +34,7 @@ body {
   display: flex;
   justify-content: center;
   background: white;
+  animation: fadeIn 1s ease-out; /* Animasi fade in selama 1 detik */
 }
 
 .login-container {
@@ -21,6 +44,21 @@ body {
   padding: 2rem;
   background: white;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 0.3s; /* Tunda animasi 0.3 detik */
+}
+
+h1 {
+  color: #00bcd4;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 36px;
+  font-weight: bold;
+  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 0.6s; /* Tunda animasi 0.6 detik */
 }
 
 .illustration img {
@@ -32,23 +70,20 @@ body {
   align-items: center;
   position: relative;
   transition: all 0.3s ease;
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 0.9s; /* Tunda animasi 0.9 detik */
 }
 
 .illustration img:hover {
   transform: scale(1.02);
 }
 
-h1 {
-  color: #00bcd4;
-  text-align: center;
-  margin-bottom: 2rem;
-  font-size: 36px;
-  font-weight: bold;
-  text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
-}
-
 .form-group {
   margin-bottom: 0.7rem;
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 1s; /* Tunda animasi 1 detik */
 }
 
 .form-group input {
@@ -79,6 +114,9 @@ h1 {
   letter-spacing: 3px;
   margin-bottom: 2rem;
   margin-top: 3rem;
+  opacity: 0; /* Mulai tidak terlihat */
+  animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+  animation-delay: 1.2s; /* Tunda animasi 1.2 detik */
 }
 
 .login-btn a {
