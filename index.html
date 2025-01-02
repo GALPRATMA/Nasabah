@@ -4,7 +4,151 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Bank Login</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Import font Poppins dari Google Fonts dengan berbagai weight dan style */
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      /* Definisi keyframe untuk animasi fade in */
+      @keyframes fadeIn {
+        from {
+          opacity: 0; /* Mulai dengan elemen tidak terlihat */
+        }
+        to {
+          opacity: 1; /* Berakhir dengan elemen sepenuhnya terlihat */
+        }
+      }
+
+      /* Definisi keyframe untuk animasi slide up */
+      @keyframes slideUp {
+        from {
+          transform: translateY(50px); /* Mulai dari 50px di bawah posisi normal */
+          opacity: 0; /* Mulai dengan tidak terlihat */
+        }
+        to {
+          transform: translateY(0); /* Bergerak ke posisi normal (0px) */
+          opacity: 1; /* Menjadi sepenuhnya terlihat */
+        }
+      }
+
+      /* Reset default styles untuk semua elemen */
+      * {
+        margin: 0; /* Hapus margin default */
+        padding: 0; /* Hapus padding default */
+        box-sizing: border-box; /* Ukuran elemen termasuk padding dan border */
+        font-family: "Poppins", serif; /* Set font default ke Poppins */
+      }
+
+      /* Styling untuk elemen body */
+      body {
+        min-height: 667px; /* Set tinggi minimum body */
+        display: flex; /* Gunakan flexbox untuk layout */
+        justify-content: center; /* Pusatkan konten secara horizontal */
+        background: white; /* Set background putih */
+        animation: fadeIn 1s ease-out; /* Animasi fade in selama 1 detik */
+      }
+
+      /* Container utama */
+      .container {
+        width: 100%; /* Gunakan seluruh lebar yang tersedia */
+        height: 100vh; /* Tinggi sama dengan tinggi viewport */
+        max-width: 480px; /* Batasi lebar maksimum */
+        padding: 3rem; /* Padding di semua sisi */
+        background: white; /* Background putih */
+        box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1); /* Bayangan halus */
+        opacity: 0; /* Mulai tidak terlihat */
+        animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+        animation-delay: 0.3s; /* Tunda animasi 0.3 detik */
+      }
+
+      /* Styling untuk heading */
+      h1 {
+        color: #00bcd4; /* Warna teks cyan */
+        text-align: center; /* Rata tengah teks */
+        margin-bottom: 4rem; /* Margin bawah */
+        margin-top: 4rem; /* Margin atas */
+        font-size: 25px; /* Ukuran font */
+        font-weight: bold; /* Tebal font */
+        text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3); /* Efek bayangan teks */
+        opacity: 0; /* Mulai tidak terlihat */
+        animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+        animation-delay: 0.6s; /* Tunda animasi 0.6 detik */
+      }
+
+      /* Styling untuk gambar dalam ilustrasi */
+      .illustration img {
+        width: 100%; /* Gunakan seluruh lebar container */
+        max-width: 480px; /* Batasi lebar maksimum */
+        height: auto; /* Tinggi menyesuaikan rasio aspek */
+        margin-bottom: 2rem; /* Margin bawah */
+        display: flex; /* Gunakan flexbox */
+        justify-content: center; /* Pusatkan secara horizontal */
+        align-items: center; /* Pusatkan secara vertikal */
+        position: relative; /* Set posisi relatif untuk positioning */
+        transition: all 0.3s ease; /* Transisi halus untuk semua perubahan */
+        opacity: 0; /* Mulai tidak terlihat */
+        animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+        animation-delay: 0.9s; /* Tunda animasi 0.9 detik */
+      }
+
+      /* Efek hover untuk gambar */
+      .illustration img:hover {
+        transform: scale(1.02); /* Perbesar sedikit saat hover */
+      }
+
+      /* Styling untuk tombol login */
+      .login-btn {
+        background-color: #00bcd4; /* Warna background cyan */
+        color: white; /* Warna teks putih */
+        border: 2px solid transparent; /* Border transparan */
+        padding: 10px 0; /* Padding atas bawah */
+        border-radius: 25px; /* Border rounded */
+        width: 100%; /* Gunakan seluruh lebar */
+        font-size: 20px; /* Ukuran font */
+        font-weight: 600; /* Ketebalan font */
+        font-style: italic; /* Font miring */
+        cursor: pointer; /* Cursor pointer saat hover */
+        transition: all 0.3s ease; /* Transisi halus */
+        letter-spacing: 3px; /* Spasi antar huruf */
+        margin-bottom: 2rem; /* Margin bawah */
+        margin-top: 3rem; /* Margin atas */
+        opacity: 0; /* Mulai tidak terlihat */
+        animation: slideUp 1s ease-out forwards; /* Animasi slide up */
+        animation-delay: 1.2s; /* Tunda animasi 1.2 detik */
+      }
+
+      /* Styling untuk link dalam tombol */
+      .login-btn a {
+        text-decoration: none; /* Hapus garis bawah link */
+        color: inherit; /* Warisi warna dari parent */
+        width: 100%; /* Gunakan seluruh lebar */
+        height: 100%; /* Gunakan seluruh tinggi */
+        display: flex; /* Gunakan flexbox */
+        justify-content: center; /* Pusatkan horizontal */
+        align-items: center; /* Pusatkan vertikal */
+      }
+
+      /* Efek hover untuk tombol login */
+      .login-btn:hover {
+        background-color: #ffffff; /* Ubah background jadi putih */
+        color: #00bcd4; /* Ubah warna teks jadi cyan */
+        border: 2px solid #00bcd4; /* Tambah border cyan */
+        transform: translateY(-2px); /* Geser ke atas 2px */
+        box-shadow: 0 4px 8px rgba(0, 188, 212, 0.2); /* Tambah bayangan */
+      }
+
+      /* Media query untuk layar mobile */
+      @media (max-width: 480px) {
+        .container {
+          padding: 1.5rem; /* Kurangi padding pada layar kecil */
+        }
+        h1 {
+          font-size: 20px; /* Kurangi ukuran font heading */
+        }
+        .illustration img {
+          width: 100%; /* Pastikan gambar full width */
+        }
+      }
+    </style>
   </head>
   <body>
     <div class="container">
