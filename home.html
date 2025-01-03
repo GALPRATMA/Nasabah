@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mini Bank | Smk Ijo</title>
+    <script src="https://unpkg.com/feather-icons"></script>
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"); /* Mengimpor font Poppins dengan semua variasi berat dan gaya */
 
@@ -262,6 +263,67 @@
         background-color: #666; /* Warna latar saat hover */
       }
 
+      .album {
+        display: none; /* Sembunyikan secara default */
+        position: fixed; /* Posisi tetap */
+        top: 70.4%; /* Posisi tengah vertikal */
+        left: 50%; /* Posisi tengah horizontal */
+        transform: translate(-50%, -50%); /* Penyesuaian posisi tengah sempurna */
+        width: 100%; /* Lebar penuh */
+        height: 122px;
+        max-width: 344px; /* Lebar maksimum */
+        padding: 10px; /*  Jarak dalam */
+        background: #333; /* Latar belakang putih */
+        border-radius: 0 0 10px 10px; /* Sudut melengkung */
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+        z-index: 1001; /* Lapisan di atas overlay */
+        animation: fadeIn 1s ease-out; /* Animasi fade in selama 1 detik */
+      }
+
+      .album .album-header {
+        list-style: none;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+      }
+
+      .album-header h1 {
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .album .bg {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding-top: 5px;
+        gap: 3px;
+      }
+
+      .close,
+      .delete {
+        cursor: pointer;
+      }
+
+      .album .center {
+        width: 45px;
+        height: 45px;
+        background-color: #12c727;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+
+      .album .edit-album {
+        height: 25px;
+        width: 25px;
+      }
+
       /* Perangkat ekstra kecil (ponsel, 320px ke bawah) */
       @media screen and (max-width: 320px) {
         .container {
@@ -384,6 +446,22 @@
       <button type="submit" class="submit-btn">Ubah</button>
     </form>
     <!-- akhir edit profil 1 -->
+
+    <!-- edit foto -->
+    <div class="album">
+      <ul class="album-header">
+        <li class="close"><i data-feather="x"></i></li>
+        <li><h1>Profil Foto</h1></li>
+        <li class="delete"><i data-feather="trash"></i></li>
+      </ul>
+      <div class="bg">
+        <div class="center">
+          <img src="img/6.webp" alt="album" class="edit-album" />
+        </div>
+      </div>
+    </div>
+
+    <!-- end edit foto -->
 
     <script src="script.js"></script>
   </body>
